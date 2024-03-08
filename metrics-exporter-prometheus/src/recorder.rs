@@ -273,4 +273,10 @@ impl PrometheusHandle {
     pub fn render(&self) -> String {
         self.inner.render()
     }
+
+    /// Exposes the snapshot directly without having to start an exporter.
+    /// This is useful for local scenarios.
+    pub fn get_recent_metrics(&self) -> Snapshot {
+        self.inner.get_recent_metrics()
+    }
 }
